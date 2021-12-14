@@ -1,15 +1,16 @@
-# Challenge reactor-core
+# Requerimientos del taller
 
-Dentro del código se encutra un ejemplo para aplicar reactividad con Spring Boot, se cuenta con una herramienta utilitaria para leer archivos CSV, lo que se buscar es aplicar los operadores reactivas para leer este archivo, y se reta para hacer este procedimiento en mongodb.
+En este taller se debe realizar un ejemplo de como se implementa los conceptos de:
 
-Leer las pruebas unitarias.
+* Patrón observer
+* Publicador/subscriptor
+* Flujos de dato 
+* Backpresure
 
 
 # Step by Step
 
-- Transformar un CSV una lista de Stream de Java (Usar operadores basicos)
-- En vez de usar Java Stream aplicamos reactividad (Reactor Core) con trasnformaciones (Usar operadores basicos)
-- Optimizar las consultas y aplicar un servicio web para hacer estos filtros
-- Hacer un proceso de migración en donde tomemos los datos del archivo y lo llevemos a una base datos (MangoDB)
-- Trabajo directamente los desde una base de datos reactiva y objserva la rendimiento
-- Prueba de concurencia con JMeter, donde vamos a colocar 100 hilos de ejeucución para observar los comportamientos de cada servicio
+Basado en el siguiente ejemplo del repositorio: https://github.com/Sofka-XT/challenge-reactor-core deberás realizar lo siguiente:
+
+* A partir de una lista de datos de jugadores se debe realizar consultas y/o operaciones que permita filtrar y ordenar los jugadores, se debe consultas los jugadores mayores a 34 años, jugadores filtrados por un club especifico.
+* Consular las nacionalidades de los jugadores, crear una lista de las nacionalidades y un ranking de los jugadores por cada pais que se tengan en la lista.
