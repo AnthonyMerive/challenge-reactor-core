@@ -13,12 +13,12 @@ public class CsvUtilFile {
     private CsvUtilFile(){}
 
     public static List<Player> getPlayers(){
-        var uri =  CsvUtilFile.class.getClassLoader().getResource("data.csv");
+        var uri =  CsvUtilFile.class.getClassLoader().getResource("demo_data.csv");
         List<Player> list = new ArrayList<>();
         try (CSVReader reader = new CSVReader(new FileReader(uri.getFile()))) {
             List<String[]> registers = reader.readAll();
             registers.forEach(strings -> list.add(new Player(
-                    Integer.parseInt(strings[0].trim()),
+                    strings[0].trim(),
                     strings[1],
                     Integer.parseInt(Optional.of(strings[2].trim()).filter(h -> !h.isBlank()).orElse("0")),
                     strings[3],
@@ -28,7 +28,7 @@ public class CsvUtilFile {
                     strings[7]
             )));
 
-           return list;
+            return list;
 
         } catch (IOException | CsvException e) {
             throw new IllegalArgumentException(e.getMessage());
